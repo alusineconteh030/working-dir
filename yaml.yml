@@ -1,0 +1,17 @@
+Name: Source
+Actions:
+  - InputArtifacts: []
+    ActionTypeId:
+      Version: '1'
+      Owner: AWS
+      Category: Source
+      Provider: CodeStarSourceConnection
+    OutputArtifacts:
+      - Name: SourceArtifact
+    RunOrder: 1
+    Configuration:
+      ConnectionArn: "arn:aws:codestar-connections:region:account-id:connection/connection-id"
+      FullRepositoryId: "some-user/my-repo"
+      BranchName: "main"
+      OutputArtifactFormat: "CODE_ZIP"
+    Name: ApplicationSource
